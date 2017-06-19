@@ -4,4 +4,4 @@
 
 SERVER=$(hostname -f)
 
-df -Ph | column -t |  mail -s "Shire Disk Report for $SERVER" networkengineering@highpoint-solutions.com
+df -Ph | column -t |  mail -s "Shire Disk Report for $SERVER" youremailaddress@domain.com
