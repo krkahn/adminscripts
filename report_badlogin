@@ -1,0 +1,12 @@
+###########################################################################################################
+#! /bin/sh
+# report_badlogin
+# This file currently gets pointed to by /etc/pam.d/password-auth-ac
+# This is different from Debian distros.
+###########################################################################################################
+if grep -F -x -v -f /var/log/secure.old /var/log/secure | grep -in 'invalid' | mail -s "Bad login attempt notification" "krkahn@gmail.com"; then
+  cp -f /var/log/secure /var/log/secure.old
+  chown YOURUSERNAME /var/log/secure.old
+fi
+
+exit 0
